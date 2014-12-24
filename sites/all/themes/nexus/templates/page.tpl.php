@@ -249,7 +249,7 @@
     <div class="container">
       <div class="row">
         <div class="fcred col-sm-12">
-          <?php print t('Copyright'); ?> &copy; <?php echo date("Y"); ?>, <a href="<?php print $front_page; ?>"><?php print $site_name; ?></a>. <?php print t('Theme by'); ?>  <a href="http://www.devsaran.com" target="_blank">Devsaran</a>.
+          <?php print t('Copyright'); ?> &copy; <?php echo date("Y"); ?>, <a href="<?php print $front_page; ?>"><?php print $site_name; ?></a>. <?php print t('All Rights Reserved. '); ?><?php print t("Built on ")?><a href="http://drupal.com/projects/nexus"><?php print t('Nexus. ')?></a><?php print t("Proudly powered by !drupal", array('!drupal' => l('Drupal',"http://drupal.org")))?>
         </div>
       </div>
     </div>

@@ -149,7 +149,7 @@ function dreamengg_views_views_default_views() {
     'thousand_separator' => '',
     'prefix_suffix' => 1,
   );
-  /* Field: Content: Project Descripition */
+  /* Field: Content: Image Desciption */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -356,7 +356,7 @@ function dreamengg_views_views_default_views() {
     'colorbox_caption' => 'auto',
     'colorbox_caption_custom' => '',
   );
-  /* Field: Content: Project Descripition */
+  /* Field: Content: Image Desciption */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -413,16 +413,25 @@ function dreamengg_views_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = '<h1>Our <span>Projects</span><div class="border-bottom-null"></div>';
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['style_options']['class'] = 'rig';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = '<div class="views-no-result">Sorry! There is nothing under the section.</div>';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
   /* Field: Content: Project Image Thumb */
   $handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
   $handler->display->display_options['fields']['field_project_image']['table'] = 'field_data_field_project_image';
@@ -448,7 +457,7 @@ function dreamengg_views_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Project Descripition */
+  /* Field: Content: Image Desciption */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -493,6 +502,7 @@ function dreamengg_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'dreamengg_projects' => 'dreamengg_projects',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Is Project Completed (field_is_project_completed) */
   $handler->display->display_options['filters']['field_is_project_completed_value']['id'] = 'field_is_project_completed_value';
   $handler->display->display_options['filters']['field_is_project_completed_value']['table'] = 'field_data_field_is_project_completed';
@@ -500,6 +510,7 @@ function dreamengg_views_views_default_views() {
   $handler->display->display_options['filters']['field_is_project_completed_value']['value'] = array(
     1 => '1',
   );
+  $handler->display->display_options['filters']['field_is_project_completed_value']['group'] = 1;
 
   /* Display: Projects */
   $handler = $view->new_display('block', 'Projects', 'block');
@@ -529,7 +540,7 @@ function dreamengg_views_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Project Descripition */
+  /* Field: Content: Image Desciption */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -542,7 +553,7 @@ function dreamengg_views_views_default_views() {
   /* Display: Project Completed */
   $handler = $view->new_display('page', 'Project Completed', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Projects <span>Completed</span>';
+  $handler->display->display_options['title'] = 'Projects <span>Completed</span><div class="border-bottom-null"></div>';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
@@ -571,7 +582,7 @@ function dreamengg_views_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="project-info">
  [field_project_image]
 <div class="project-info-title">[title]</div>
@@ -579,11 +590,13 @@ function dreamengg_views_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Project Descripition */
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Image Desciption */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['max_length'] = '200';
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
@@ -592,17 +605,75 @@ function dreamengg_views_views_default_views() {
   $handler->display->display_options['fields']['field_project_client']['table'] = 'field_data_field_project_client';
   $handler->display->display_options['fields']['field_project_client']['field'] = 'field_project_client';
   $handler->display->display_options['fields']['field_project_client']['label'] = '';
+  $handler->display->display_options['fields']['field_project_client']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_project_client']['alter']['text'] = '<div class="company-projects">
+  [field_project_image]
+  <div class="company-projects-inside">
+    <div class="company-projects-award">[title]</div>
+    <div class="company-projects-summary">[body]</div>
+    <div class="company-projects-clients"><span>Client </span>[field_project_client]</div>
+  </div>
+</div>';
   $handler->display->display_options['fields']['field_project_client']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_project_client']['settings'] = array(
     'link' => 0,
   );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'dreamengg_projects' => 'dreamengg_projects',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Is Project Completed (field_is_project_completed) */
+  $handler->display->display_options['filters']['field_is_project_completed_value']['id'] = 'field_is_project_completed_value';
+  $handler->display->display_options['filters']['field_is_project_completed_value']['table'] = 'field_data_field_is_project_completed';
+  $handler->display->display_options['filters']['field_is_project_completed_value']['field'] = 'field_is_project_completed_value';
+  $handler->display->display_options['filters']['field_is_project_completed_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_is_project_completed_value']['group'] = 1;
+  /* Filter criterion: Content: Project Client (field_project_client) */
+  $handler->display->display_options['filters']['field_project_client_target_id']['id'] = 'field_project_client_target_id';
+  $handler->display->display_options['filters']['field_project_client_target_id']['table'] = 'field_data_field_project_client';
+  $handler->display->display_options['filters']['field_project_client_target_id']['field'] = 'field_project_client_target_id';
+  $handler->display->display_options['filters']['field_project_client_target_id']['value'] = array(
+    16 => '16',
+    17 => '17',
+    18 => '18',
+    19 => '19',
+    20 => '20',
+    21 => '21',
+    22 => '22',
+  );
+  $handler->display->display_options['filters']['field_project_client_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_project_client_target_id']['expose']['operator_id'] = 'field_project_client_target_id_op';
+  $handler->display->display_options['filters']['field_project_client_target_id']['expose']['label'] = 'Client';
+  $handler->display->display_options['filters']['field_project_client_target_id']['expose']['operator'] = 'field_project_client_target_id_op';
+  $handler->display->display_options['filters']['field_project_client_target_id']['expose']['identifier'] = 'field_project_client_target_id';
+  $handler->display->display_options['filters']['field_project_client_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_project_client_target_id']['expose']['reduce'] = TRUE;
   $handler->display->display_options['path'] = 'project/completed';
 
   /* Display: Project In Hand */
   $handler = $view->new_display('page', 'Project In Hand', 'page_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Projects <span>In Hand</span>';
+  $handler->display->display_options['title'] = 'Projects <span>In Hand</span><div class="border-bottom-null"></div>';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
@@ -631,19 +702,17 @@ function dreamengg_views_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="project-info">
- [field_project_image]
-<div class="project-info-title">[title]</div>
-</div>';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Project Descripition */
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Image Desciption */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['max_length'] = '200';
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
@@ -652,6 +721,15 @@ function dreamengg_views_views_default_views() {
   $handler->display->display_options['fields']['field_project_client']['table'] = 'field_data_field_project_client';
   $handler->display->display_options['fields']['field_project_client']['field'] = 'field_project_client';
   $handler->display->display_options['fields']['field_project_client']['label'] = '';
+  $handler->display->display_options['fields']['field_project_client']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_project_client']['alter']['text'] = '<div class="company-projects">
+ [field_project_image]
+  <div class="company-projects-inside">
+    <div class="company-projects-award">[title]</div>
+    <div class="company-projects-summary">[body]</div>
+    <div class="company-projects-clients"><span>Client </span>[field_project_client]</div>
+  </div>
+</div>';
   $handler->display->display_options['fields']['field_project_client']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_project_client']['settings'] = array(
     'link' => 0,
@@ -680,6 +758,30 @@ function dreamengg_views_views_default_views() {
   $handler->display->display_options['filters']['field_is_project_completed_value']['value'] = array(
     0 => '0',
   );
+  /* Filter criterion: Content: Project Client (field_project_client) */
+  $handler->display->display_options['filters']['field_project_client_target_id']['id'] = 'field_project_client_target_id';
+  $handler->display->display_options['filters']['field_project_client_target_id']['table'] = 'field_data_field_project_client';
+  $handler->display->display_options['filters']['field_project_client_target_id']['field'] = 'field_project_client_target_id';
+  $handler->display->display_options['filters']['field_project_client_target_id']['value'] = array(
+    16 => '16',
+    17 => '17',
+    18 => '18',
+    19 => '19',
+    20 => '20',
+    21 => '21',
+    22 => '22',
+  );
+  $handler->display->display_options['filters']['field_project_client_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_project_client_target_id']['expose']['operator_id'] = 'field_project_client_target_id_op';
+  $handler->display->display_options['filters']['field_project_client_target_id']['expose']['label'] = 'Client';
+  $handler->display->display_options['filters']['field_project_client_target_id']['expose']['operator'] = 'field_project_client_target_id_op';
+  $handler->display->display_options['filters']['field_project_client_target_id']['expose']['identifier'] = 'field_project_client_target_id';
+  $handler->display->display_options['filters']['field_project_client_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_project_client_target_id']['expose']['reduce'] = TRUE;
   $handler->display->display_options['path'] = 'project/inhand';
 
   /* Display: Services */

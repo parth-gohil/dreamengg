@@ -542,7 +542,7 @@ a.frmore{
     color: #000000;
     font-size: 36px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     margin-top: 10px;
 }
 
@@ -625,7 +625,7 @@ textarea { line-height: 1.5; }
 
 textarea.form-textarea, select.form-select { padding: 4px; }
 
-input.form-text, textarea.form-textarea, select.form-select { border: 1px solid #ccc; }
+input.form-text, textarea.form-textarea, select.form-select { border: 1px solid #ccc; background: none; }
 
 .password-suggestions ul li { margin-left: 1.2em; }
 
