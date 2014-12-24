@@ -61,6 +61,17 @@ function dreamengg_blocks_install() {
       'visibility' => BLOCK_VISIBILITY_LISTED,
     ),
     array(
+      'module' => 'dreamengg_blocks',
+      'delta' => 'contact_address',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => -18,
+      'region' => 'sidebar_first',
+      'pages' => 'contact',
+      'cache' => DRUPAL_NO_CACHE,
+      'visibility' => BLOCK_VISIBILITY_LISTED,
+    ),
+    array(
       'module' => 'views',
       'delta' => 'client_carousal-block',
       'theme' => $default_theme,

@@ -3,3 +3,40 @@
  * @file
  * Utility file to be used in DreamEngg.
  */
+
+/**
+ * Implements form_alter
+ */
+function dreamengg_main_form_alter(&$form, &$form_state, $form_id) {
+  if($form_id == 'contact_site_form'){
+    drupal_set_title("<h1>Contact <span>Us</span><h1><div class='border-bottom-null'></div>", PASS_THROUGH);
+    
+    $form['name']['#title'] = ''; 
+    $form['name']['#default_value'] = ''; 
+    $form['name']['#attributes']['placeholder'] = 'Enter Your Name (Required)';
+    $form['name']['#weight'] = 0;
+
+    $form['mail']['#title'] = ''; 
+    $form['mail']['#default_value'] = ''; 
+    $form['mail']['#attributes']['placeholder'] = 'Enter Your E-Mail (Required)';
+    $form['mail']['#weight'] = 1; 
+
+    $form['phone']  = array(
+      '#type' => 'textfield',
+      '#attributes' => array('placeholder' => 'Enter Your Phone Number (Required)'),
+      '#weight' => 2,
+      '#required' => 1
+    );
+    $form['subject']['#title'] = ''; 
+    $form['subject']['#default_value'] = ''; 
+    $form['subject']['#attributes']['placeholder'] = 'Subject (Required)';
+    $form['subject']['#weight'] = 3;
+
+    $form['message']['#title'] = ''; 
+    $form['message']['#default_value'] = ''; 
+    $form['message']['#attributes']['placeholder'] = 'Message (Required)';
+    $form['message']['#weight'] = 4;
+
+    unset($form['copy']);
+  }
+}

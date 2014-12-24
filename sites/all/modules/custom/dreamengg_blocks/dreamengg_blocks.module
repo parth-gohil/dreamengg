@@ -23,6 +23,14 @@ function dreamengg_blocks_block_info() {
     'info' => t('Homepage Equipments'),
     'cache' => DRUPAL_CACHE_GLOBAL,
   );
+  $blocks['contact_address'] = array(
+    'info' => t('Reach Us'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
+  $blocks['contact_map'] = array(
+    'info' => t('Contact Map'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
 
   return $blocks;
 }
@@ -64,6 +72,16 @@ function dreamengg_blocks_theme() {
     'variables' => array(''),
     'file' => 'dreamengg_blocks.block.inc',
     'template' => 'templates/homepage-equipments',
+  );
+  $theme['contact_address'] = array(
+    'variables' => array(''),
+    'file' => 'dreamengg_blocks.block.inc',
+    'template' => 'templates/contact-address',
+  );
+  $theme['contact_map'] = array(
+    'variables' => array(''),
+    'file' => 'dreamengg_blocks.block.inc',
+    'template' => 'templates/contact-map',
   );
   
   return $theme;

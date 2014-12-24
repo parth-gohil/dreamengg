@@ -357,3 +357,65 @@ div#content_top {
         text-align: center;
     }
 }
+
+/*contct us page*/
+aside#sidebar {
+    background: #ED564B;
+    color: #FFF;
+}
+
+.contact-address {
+    font-family: 'Raleway';
+    line-height: 2em;
+}
+
+.contact-add-head {
+    font-size: 22px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid;
+    padding: 5px;
+}
+.contact-add {
+    font-size: 16px;
+    color: #101010;
+}
+.contact-address .border-bottom-null {
+    margin-bottom: 7px;
+}
+.ballery-branch {
+    font-weight: bold;
+    margin-top: 30px;
+}
+div#footer-block {
+    margin-top: 15px;
+    border-top: 1px solid #ED564B;
+    background: #F5F5F5;
+}
+form#contact-site-form {
+    font-family: 'Raleway';
+    font-size: 20px;
+}
+.resizable-textarea .grippie{
+    display: none;
+}
+
+input#edit-submit {
+    background: #ED564B;
+    font-family: 'Raleway';
+    font-size: 16px;
+    font-weight: normal;
+    box-shadow: none;
+    text-shadow: none;
+    color: #FFF;
+    border-radius: 0;
+}
+.marker, .form-required{
+    display: none;
+}
+.form-item.form-type-textarea.form-item-message {
+    margin-left: 5px;
+    margin-top: -25px;
+}
+.form-item.form-type-textfield.form-item-phone {
+    margin-left: 5px;
+}

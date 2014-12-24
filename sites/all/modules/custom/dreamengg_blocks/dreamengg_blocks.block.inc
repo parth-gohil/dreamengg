@@ -4,6 +4,10 @@
  * Additional file for block views..
  */
 
+/**
+ * Callback function for company portfolio block.
+ * @return string
+ */
 function dreamengg_blocks_company_portfolio_block_view() {
   $block = array();
   
@@ -15,6 +19,10 @@ function dreamengg_blocks_company_portfolio_block_view() {
   return $block;
 }
 
+/**
+ * * Callback function for company services block.
+ * @return type
+ */
 function dreamengg_blocks_homepage_services_block_view() {
   $block = array();
 
@@ -23,6 +31,11 @@ function dreamengg_blocks_homepage_services_block_view() {
   );
   return $block;
 }
+
+/**
+ * * Callback function for company manpower block.
+ * @return type
+ */
 function dreamengg_blocks_homepage_manpower_block_view() {
   $block = array();
 
@@ -31,11 +44,42 @@ function dreamengg_blocks_homepage_manpower_block_view() {
   );
   return $block;
 }
+
+/**
+ * * Callback function for company equipments block.
+ * @return type
+ */
 function dreamengg_blocks_homepage_equipments_block_view() {
   $block = array();
 
   $block['content'] = array(
     '#markup' => theme('homepage_equipments'),
+  );
+  return $block;
+}
+
+/**
+ * * Callback function for contact address block.
+ * @return type
+ */
+function dreamengg_blocks_contact_address_block_view() {
+  $block = array();
+
+  $block['content'] = array(
+    '#markup' => theme('contact_address'),
+  );
+  return $block;
+}
+
+/**
+ * * Callback function for contact map block.
+ * @return type
+ */
+function dreamengg_blocks_contact_map_block_view() {
+  $block = array();
+
+  $block['content'] = array(
+    '#markup' => theme('contact_map'),
   );
   return $block;
 }
