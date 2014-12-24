@@ -1,0 +1,33 @@
+name = DreamEngg
+description = The DreamEngg installation profile enabling required core modules and the dreamengg_main module.
+version = VERSION
+core = 7.x
+dependencies[] = block
+dependencies[] = color
+dependencies[] = comment
+dependencies[] = contact
+dependencies[] = contextual
+dependencies[] = dashboard
+dependencies[] = help
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = dblog
+dependencies[] = search
+dependencies[] = shortcut
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = rdf
+; custom
+dependencies[] = dreamengg_main
+
+; contrib
+dependencies[] = views
+dependencies[] = colorbox
+dependencies[] = special_menu_items
+dependencies[] = views_field_view
+dependencies[] = admin_menu

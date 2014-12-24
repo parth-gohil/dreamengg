@@ -1,0 +1,100 @@
+<?php
+
+/**
+ * @file
+ * Custom menu pages for the site.
+ */
+
+/**
+ * Implemets hook_menu.
+ */
+function dreamengg_pages_menu() {
+  $items['gallery'] = array(
+    'title' => '',
+    'page callback' => 'dreamengg_gallery',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  $items['company/profile'] = array(
+    'title' => 'About Dream Engineering & Contractors',
+    'page callback' => 'dreamengg_company_profile',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  $items['company/history'] = array(
+    'title' => 'History to Present',
+    'page callback' => 'dreamengg_company_history',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  $items['company/achievements'] = array(
+    'title' => 'Achievements',
+    'page callback' => 'dreamengg_company_achievements',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_theme
+ */
+function dreamengg_pages_theme() {
+  return array(
+        'dreamengg_company_profile' => array(
+            'template' => 'templates/dreamengg-company-profile',
+        ),
+        'dreamengg_company_history' => array(
+            'template' => 'templates/dreamengg-company-history',
+        ),
+        'dreamengg_company_achievements' => array(
+            'template' => 'templates/dreamengg-company-achievements',
+        ),
+    );
+
+}
+
+/**
+ * Callback function to return appropiate views.
+ * @return type
+ */
+function dreamengg_gallery() {
+  $display = (filter_input(INPUT_GET, 'display')) ? filter_input(INPUT_GET, 'display') : '';
+  return views_embed_view('image_gallery', 'block_1');
+}
+
+/**
+ * Callback function to return company profile page.
+ */
+function dreamengg_company_profile() {
+  drupal_set_title('About Dream <span>Engineering & Contractors</span>', PASS_THROUGH);
+  $bread[] = l('Home','<front>');
+  $bread[] = l('Company', '<nolink>');
+  $bread[] = l('Profile','company/profile');
+  drupal_set_breadcrumb($bread);
+  return theme('dreamengg_company_profile');
+}
+
+/**
+ * Callback function to return company history page.
+ */
+function dreamengg_company_history() {
+  drupal_set_title("History to <span>Present</span>", PASS_THROUGH);
+  $bread[] = l('Home','<front>');
+  $bread[] = l('Company', '<nolink>');
+  $bread[] = l('History','company/history');
+  drupal_set_breadcrumb($bread);
+  return theme('dreamengg_company_history');
+}
+
+/**
+ * Callback function to return company Achievements page.
+ */
+function dreamengg_company_achievements() {
+  $bread[] = l('Home','<front>');
+  $bread[] = l('Company', '<nolink>');
+    $bread[] = l('Achievements','company/achievements');
+  drupal_set_breadcrumb($bread);
+  return views_embed_view('dreamengg_achievements','block');
+}

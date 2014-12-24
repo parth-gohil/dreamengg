@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the DreamEngg Views feature.
+ */
+
+include_once 'dreamengg_views.features.inc';

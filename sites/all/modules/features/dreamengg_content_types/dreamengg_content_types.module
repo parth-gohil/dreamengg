@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the DreamEngg Content Types feature.
+ */
+
+include_once 'dreamengg_content_types.features.inc';

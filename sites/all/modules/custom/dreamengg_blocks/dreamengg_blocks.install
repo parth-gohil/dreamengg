@@ -1,0 +1,89 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the standard installation profile.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site's blocks
+ *
+ * @see system_install()
+ */
+function dreamengg_blocks_install() {
+  // Enable some standard blocks.
+  $default_theme = 'nexus';
+  $blocks = array(
+    array(
+      'module' => 'dreamengg_blocks',
+      'delta' => 'company_portfolio',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => -18,
+      'region' => 'preface_middle',
+      'pages' => '<front>',
+      'cache' => DRUPAL_NO_CACHE,
+      'visibility' => BLOCK_VISIBILITY_LISTED,
+    ),
+    array(
+      'module' => 'dreamengg_blocks',
+      'delta' => 'homepage_services',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => -18,
+      'region' => 'footer_first',
+      'pages' => '<front>',
+      'cache' => DRUPAL_NO_CACHE,
+      'visibility' => BLOCK_VISIBILITY_LISTED,
+    ),
+    array(
+      'module' => 'dreamengg_blocks',
+      'delta' => 'homepage_manpower',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => -18,
+      'region' => 'footer_second',
+      'pages' => '<front>',
+      'cache' => DRUPAL_NO_CACHE,
+      'visibility' => BLOCK_VISIBILITY_LISTED,
+    ),
+    array(
+      'module' => 'dreamengg_blocks',
+      'delta' => 'homepage_equipments',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => -18,
+      'region' => 'footer_third',
+      'pages' => '<front>',
+      'cache' => DRUPAL_NO_CACHE,
+      'visibility' => BLOCK_VISIBILITY_LISTED,
+    ),
+    array(
+      'module' => 'views',
+      'delta' => 'client_carousal-block',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => -18,
+      'region' => 'content_top',
+      'pages' => '<front>',
+      'cache' => DRUPAL_NO_CACHE,
+      'visibility' => BLOCK_VISIBILITY_LISTED,
+    ),
+    array(
+      'module' => 'views',
+      'delta' => 'projects-block',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => -18,
+      'region' => 'content_top',
+      'pages' => '<front>',
+      'cache' => DRUPAL_NO_CACHE,
+      'visibility' => BLOCK_VISIBILITY_LISTED,
+    ),
+  );
+
+  // Install all defined blocks.
+  _dreamengg_blocks_install_blocks($blocks);
+}

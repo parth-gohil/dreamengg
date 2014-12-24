@@ -1,0 +1,81 @@
+<?php
+/**
+ * @file
+ * Creates custom blocks in the site.
+ */
+
+function dreamengg_blocks_block_info() {
+  $blocks = array();
+
+  $blocks['company_portfolio'] = array(
+    'info' => t('Company Portfolio'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
+  $blocks['homepage_services'] = array(
+    'info' => t('Homepage Services'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
+  $blocks['homepage_manpower'] = array(
+    'info' => t('Homepage Manpower'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
+  $blocks['homepage_equipments'] = array(
+    'info' => t('Homepage Equipments'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function dreamengg_blocks_block_view($delta) {
+  $block = array();
+
+  // Automatically find the appropriate function to retrieve the block content.
+  $blocks = array_keys(dreamengg_blocks_block_info());
+  if (in_array($delta, $blocks)) {
+    module_load_include('inc', 'dreamengg_blocks', 'dreamengg_blocks.block');
+    $function = 'dreamengg_blocks_' . $delta . '_block_view';
+    $block = $function();
+  }
+
+  return $block;
+}
+
+/**
+ * Implements hook_theme
+ */
+function dreamengg_blocks_theme() {
+  $theme = array();
+  
+  $theme['homepage_services'] = array(
+    'variables' => array(''),
+    'file' => 'dreamengg_blocks.block.inc',
+    'template' => 'templates/homepage-services',
+  );
+  $theme['homepage_manpower'] = array(
+    'variables' => array(''),
+    'file' => 'dreamengg_blocks.block.inc',
+    'template' => 'templates/homepage-manpower',
+  );
+  $theme['homepage_equipments'] = array(
+    'variables' => array(''),
+    'file' => 'dreamengg_blocks.block.inc',
+    'template' => 'templates/homepage-equipments',
+  );
+  
+  return $theme;
+}
+
+/**
+ * Technical function to perform a query to insert a new block.
+ */
+function _dreamengg_blocks_install_blocks($blocks) {
+  $query = db_insert('block')->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'pages', 'cache', 'visibility'));
+  foreach ($blocks as $block) {
+    $query->values($block);
+  }
+  $query->execute();
+}

@@ -1,0 +1,12 @@
+name = "DreamEngg Main"
+description = "Main module to install DreamEngg in a go."
+package = "DreamEngg Custom"
+core = 7.x
+
+; Dependencies
+dependencies[] = jquery_update
+dependencies[] = dreamengg_blocks
+dependencies[] = dreamengg_pages
+dependencies[] = dreamengg_content_types
+dependencies[] = dreamengg_menu
+dependencies[] = dreamengg_views

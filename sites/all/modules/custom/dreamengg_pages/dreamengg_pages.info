@@ -1,0 +1,4 @@
+name = "DreamEngg Pages"
+description = "Creates the custom pages in the sites."
+package = "DreamEngg Custom"
+core = 7.x

@@ -1,0 +1,4 @@
+name = "DreamEngg Blocks"
+description = "Creates custom blocks for the site."
+package = "DreamEngg Custom"
+core = 7.x
