@@ -183,9 +183,10 @@ td{
 
 #primary th {
     font-weight: bold;
-    padding:10px 10px;
-    background:#555;
-    color:#fff;
+    padding: 10px 10px;
+    background: #ED564B;
+    color: #FFF;
+    font-size: 18px;
 }
 
 #primary tr{
