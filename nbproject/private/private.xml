@@ -3,24 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/dreamengg/profiles/dreamengg/dreamengg.profile</file>
+            <file>file:/var/www/html/dreamengg/sites/all/themes/nexus/css/custom.css</file>
+            <file>file:/var/www/html/dreamengg/sites/all/modules/custom/dreamengg_blocks/dreamengg_blocks.block.inc</file>
+            <file>file:/var/www/html/dreamengg/sites/all/modules/features/dreamengg_content_types/dreamengg_content_types.features.taxonomy.inc</file>
+            <file>file:/var/www/html/dreamengg/sites/all/modules/custom/dreamengg_main/dreamengg_main.install</file>
             <file>file:/var/www/html/dreamengg/sites/all/modules/custom/dreamengg_blocks/dreamengg_blocks.module</file>
             <file>file:/var/www/html/dreamengg/sites/all/themes/nexus/templates/page.tpl.php</file>
-            <file>file:/var/www/html/dreamengg/profiles/minimal/minimal.install</file>
-            <file>file:/var/www/html/dreamengg/profiles/minimal/minimal.info</file>
-            <file>file:/var/www/html/dreamengg/sites/all/modules/contrib/special_menu_items/special_menu_items.module</file>
-            <file>file:/var/www/html/dreamengg/sites/all/themes/nexus/style.css</file>
-            <file>file:/var/www/html/dreamengg/sites/all/themes/nexus/css/custom.css</file>
-            <file>file:/var/www/html/dreamengg/profiles/dreamengg/dreamengg.install</file>
-            <file>file:/var/www/html/dreamengg/sites/all/modules/custom/dreamengg_main/dreamengg_main.info</file>
-            <file>file:/var/www/html/dreamengg/sites/all/modules/custom/dreamengg_blocks/dreamengg_blocks.block.inc</file>
-            <file>file:/var/www/html/dreamengg/sites/all/themes/nexus/theme-settings.php</file>
-            <file>file:/var/www/html/dreamengg/sites/all/themes/nexus/templates/maintenance-page.tpl.php</file>
-            <file>file:/var/www/html/dreamengg/profiles/dreamengg/dreamengg.info</file>
             <file>file:/var/www/html/dreamengg/sites/all/themes/nexus/nexus.info</file>
+            <file>file:/var/www/html/dreamengg/sites/all/modules/features/dreamengg_views/dreamengg_views.features.inc</file>
             <file>file:/var/www/html/dreamengg/sites/all/modules/custom/dreamengg_blocks/dreamengg_blocks.install</file>
             <file>file:/var/www/html/dreamengg/sites/all/modules/custom/dreamengg_main/dreamengg_main.module</file>
-            <file>file:/var/www/html/dreamengg/sites/all/modules/contrib/jquery_update/jquery_update.module</file>
+            <file>file:/var/www/html/dreamengg/sites/all/themes/nexus/style.css</file>
+            <file>file:/var/www/html/dreamengg/sites/all/modules/features/dreamengg_views/dreamengg_views.info</file>
         </group>
     </open-files>
 </project-private>

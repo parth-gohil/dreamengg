@@ -412,10 +412,3 @@ input#edit-submit {
 .marker, .form-required{
     display: none;
 }
-.form-item.form-type-textarea.form-item-message {
-    margin-left: 5px;
-    margin-top: -25px;
-}
-.form-item.form-type-textfield.form-item-phone {
-    margin-left: 5px;
-}

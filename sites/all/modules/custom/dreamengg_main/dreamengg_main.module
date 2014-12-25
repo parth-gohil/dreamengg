@@ -1,42 +1,72 @@
 <?php
+
 /**
  * @file
  * Utility file to be used in DreamEngg.
  */
 
+function dreamengg_main_init(){
+}
+
+
 /**
  * Implements form_alter
  */
 function dreamengg_main_form_alter(&$form, &$form_state, $form_id) {
-  if($form_id == 'contact_site_form'){
+  if ($form_id == 'contact_site_form') {
     drupal_set_title("<h1>Contact <span>Us</span><h1><div class='border-bottom-null'></div>", PASS_THROUGH);
-    
-    $form['name']['#title'] = ''; 
-    $form['name']['#default_value'] = ''; 
+
+    $form['name']['#title'] = '';
+    $form['name']['#default_value'] = '';
     $form['name']['#attributes']['placeholder'] = 'Enter Your Name (Required)';
+    $form['name']['#required'] = 0;
     $form['name']['#weight'] = 0;
 
-    $form['mail']['#title'] = ''; 
-    $form['mail']['#default_value'] = ''; 
+    $form['mail']['#title'] = '';
+    $form['mail']['#default_value'] = '';
     $form['mail']['#attributes']['placeholder'] = 'Enter Your E-Mail (Required)';
-    $form['mail']['#weight'] = 1; 
+    $form['mail']['#weight'] = 1;
+    $form['mail']['#required'] = 0;
 
-    $form['phone']  = array(
+    $form['phone'] = array(
       '#type' => 'textfield',
       '#attributes' => array('placeholder' => 'Enter Your Phone Number (Required)'),
       '#weight' => 2,
-      '#required' => 1
     );
-    $form['subject']['#title'] = ''; 
-    $form['subject']['#default_value'] = ''; 
+    $form['subject']['#title'] = '';
+    $form['subject']['#default_value'] = '';
     $form['subject']['#attributes']['placeholder'] = 'Subject (Required)';
     $form['subject']['#weight'] = 3;
+    $form['subject']['#required'] = 0;
 
-    $form['message']['#title'] = ''; 
-    $form['message']['#default_value'] = ''; 
+    $form['message']['#title'] = '';
+    $form['message']['#default_value'] = '';
     $form['message']['#attributes']['placeholder'] = 'Message (Required)';
     $form['message']['#weight'] = 4;
+    $form['message']['#required'] = 0;
 
     unset($form['copy']);
+  }
+}
+
+/**
+ * Function to create Services taxonomy terms while installation.
+ */
+function dreamengg_main_create_services($vid) {
+  $services = array(
+    'Opeation and maitinance' => t("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."),
+    'Shutdown & Breakdown Jobs' => t("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."),
+    'Wrapping & Coating of Pipes' => t("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."),
+    'Installation & Commissioning' => t("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."),
+    'Fabrication & Erection' => t("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."),
+    'Operations and Maintenance jobs' => t("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.")
+  );
+
+  foreach ($services as $service => $desc) {
+    $term = new stdClass();
+    $term->name = $service;
+    $term->vid = $vid;
+    $term->description = $desc;
+    taxonomy_term_save($term);
   }
 }

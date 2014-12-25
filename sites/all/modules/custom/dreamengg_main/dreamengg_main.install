@@ -1,0 +1,18 @@
+<?php
+/**
+ * @file Install file for dreamengg_main module.
+ */
+
+/**
+ * Implements hook_install.
+ */
+function dreamengg_main_install() {
+
+  //Fetch the vid of Services vocabulary.
+  $services_vid_query = db_query("SELECT vid FROM taxonomy_vocabulary WHERE name = 'services'");
+  $result = $services_vid_query->fetchObject();
+  $services_vid = $result->vid;
+  
+  //Call function to create terms for Services.
+  dreamengg_main_create_services($services_vid);
+}
