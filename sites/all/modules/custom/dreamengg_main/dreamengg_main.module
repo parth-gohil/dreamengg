@@ -70,3 +70,15 @@ function dreamengg_main_create_services($vid) {
     taxonomy_term_save($term);
   }
 }
+
+/**
+ * Implemets hook_menu_alter
+ * @param array $items
+ */
+function hook_menu_alter(&$items) {
+  $items['taxonomy/term/%taxonomy_term']['page callback'] = 'dreamengg_main_taxonomy_term_page';
+}
+
+function dreamengg_main_taxonomy_term_page() {
+  return;
+}
