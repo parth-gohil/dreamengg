@@ -111,7 +111,7 @@ function dreamengg_menu_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => -50,
     'customized' => 1,
-    'parent_identifier' => 'main-menu_services:services',
+    'parent_identifier' => 'main-menu_services:<nolink>',
   );
   // Exported menu link: main-menu_gallery:gallery
   $menu_links['main-menu_gallery:gallery'] = array(
@@ -191,7 +191,7 @@ function dreamengg_menu_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => -49,
     'customized' => 1,
-    'parent_identifier' => 'main-menu_services:services',
+    'parent_identifier' => 'main-menu_services:<nolink>',
   );
   // Exported menu link: main-menu_our-team:<nolink>
   $menu_links['main-menu_our-team:<nolink>'] = array(
@@ -276,26 +276,6 @@ function dreamengg_menu_menu_default_menu_links() {
     'weight' => -47,
     'customized' => 1,
   );
-  // Exported menu link: main-menu_services:services
-  $menu_links['main-menu_services:services'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'services',
-    'router_path' => 'services',
-    'link_title' => 'Services',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'main-menu_services:services',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 1,
-    'expanded' => 1,
-    'weight' => -48,
-    'customized' => 1,
-  );
   // Translatables
   // Included for use with string extractors like potx.
   t('About Us');
@@ -311,7 +291,6 @@ function dreamengg_menu_menu_default_menu_links() {
   t('Project');
   t('Project Completed');
   t('Project InHand');
-  t('Services');
 
 
   return $menu_links;

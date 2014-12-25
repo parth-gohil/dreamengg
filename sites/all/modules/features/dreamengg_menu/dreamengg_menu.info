@@ -21,5 +21,4 @@ features[menu_links][] = main-menu_our-team:<nolink>
 features[menu_links][] = main-menu_project-completed:project/completed
 features[menu_links][] = main-menu_project-inhand:project/inhand
 features[menu_links][] = main-menu_project:<nolink>
-features[menu_links][] = main-menu_services:services
-mtime = 1419332400
+mtime = 1419347550

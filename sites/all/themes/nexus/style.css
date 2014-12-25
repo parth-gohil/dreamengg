@@ -356,6 +356,7 @@ h1#site-title a:link, h1#site-title a:visited{
     border-top:1px solid #ddd;
     position: relative;
     font-weight:400;
+    line-height: 1.4em;
 }
 
 #main-menu ul li ul li:first-child a,#main-menu ul li ul li ul li:first-child a,#main-menu ul li ul li ul li ul li:first-child a  {

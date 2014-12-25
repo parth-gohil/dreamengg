@@ -12,7 +12,26 @@ function dreamengg_main_install() {
   $services_vid_query = db_query("SELECT vid FROM taxonomy_vocabulary WHERE name = 'services'");
   $result = $services_vid_query->fetchObject();
   $services_vid = $result->vid;
-  
+
   //Call function to create terms for Services.
   dreamengg_main_create_services($services_vid);
+
+  $services_term_data = taxonomy_get_tree($services_vid);
+  
+  $services_mlid_query = db_query("SELECT mlid FROM menu_links WHERE link_title = 'Services'");
+  $result = $services_mlid_query->fetchObject();
+  $services_mlid = $result->mlid;
+  
+  foreach ($services_term_data as $service) {
+    $item = array(
+      'link_path' => 'taxonomy/term/' . $service->tid,
+      'link_title' => $service->name,
+      'menu_name' => 'main-menu',
+      'weight' => 0,
+      'language' => LANGUAGE_NONE,
+      'plid' => $services_mlid,
+      'module' => 'menu',
+    );
+    menu_link_save($item);
+  }
 }
