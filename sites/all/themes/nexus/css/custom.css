@@ -412,3 +412,10 @@ input#edit-submit {
 .marker, .form-required{
     display: none;
 }
+
+/**term pages**/
+.term-desc {
+    font-size: 16px;
+    margin-bottom: 25px;
+    line-height: 2em;
+}
