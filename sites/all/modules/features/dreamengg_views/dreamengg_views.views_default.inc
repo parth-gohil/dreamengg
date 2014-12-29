@@ -149,7 +149,7 @@ function dreamengg_views_views_default_views() {
     'thousand_separator' => '',
     'prefix_suffix' => 1,
   );
-  /* Field: Content: Image Desciption */
+  /* Field: Content: Project Descripition */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -236,10 +236,14 @@ function dreamengg_views_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Equipments';
   $handler->display->display_options['path'] = 'equipments';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Manpower';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Global: View result counter */
   $handler->display->display_options['fields']['counter']['id'] = 'counter';
@@ -356,7 +360,7 @@ function dreamengg_views_views_default_views() {
     'colorbox_caption' => 'auto',
     'colorbox_caption_custom' => '',
   );
-  /* Field: Content: Image Desciption */
+  /* Field: Content: Project Descripition */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -457,7 +461,7 @@ function dreamengg_views_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Image Desciption */
+  /* Field: Content: Project Descripition */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -540,7 +544,7 @@ function dreamengg_views_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Image Desciption */
+  /* Field: Content: Project Descripition */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -553,7 +557,7 @@ function dreamengg_views_views_default_views() {
   /* Display: Project Completed */
   $handler = $view->new_display('page', 'Project Completed', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Projects <span>Completed</span><div class="border-bottom-null"></div>';
+  $handler->display->display_options['title'] = 'Projects <span>Completed</span>';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
@@ -591,7 +595,7 @@ function dreamengg_views_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Image Desciption */
+  /* Field: Content: Project Descripition */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -649,13 +653,21 @@ function dreamengg_views_views_default_views() {
   $handler->display->display_options['filters']['field_project_client_target_id']['table'] = 'field_data_field_project_client';
   $handler->display->display_options['filters']['field_project_client_target_id']['field'] = 'field_project_client_target_id';
   $handler->display->display_options['filters']['field_project_client_target_id']['value'] = array(
-    16 => '16',
-    17 => '17',
-    18 => '18',
-    19 => '19',
-    20 => '20',
-    21 => '21',
-    22 => '22',
+    86 => '86',
+    87 => '87',
+    88 => '88',
+    89 => '89',
+    90 => '90',
+    91 => '91',
+    92 => '92',
+    93 => '93',
+    94 => '94',
+    95 => '95',
+    96 => '96',
+    97 => '97',
+    98 => '98',
+    99 => '99',
+    100 => '100',
   );
   $handler->display->display_options['filters']['field_project_client_target_id']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_project_client_target_id']['expose']['operator_id'] = 'field_project_client_target_id_op';
@@ -673,7 +685,7 @@ function dreamengg_views_views_default_views() {
   /* Display: Project In Hand */
   $handler = $view->new_display('page', 'Project In Hand', 'page_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Projects <span>In Hand</span><div class="border-bottom-null"></div>';
+  $handler->display->display_options['title'] = 'Projects <span>In Hand</span>';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
@@ -707,7 +719,7 @@ function dreamengg_views_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Image Desciption */
+  /* Field: Content: Project Descripition */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -763,13 +775,21 @@ function dreamengg_views_views_default_views() {
   $handler->display->display_options['filters']['field_project_client_target_id']['table'] = 'field_data_field_project_client';
   $handler->display->display_options['filters']['field_project_client_target_id']['field'] = 'field_project_client_target_id';
   $handler->display->display_options['filters']['field_project_client_target_id']['value'] = array(
-    16 => '16',
-    17 => '17',
-    18 => '18',
-    19 => '19',
-    20 => '20',
-    21 => '21',
-    22 => '22',
+    86 => '86',
+    87 => '87',
+    88 => '88',
+    89 => '89',
+    90 => '90',
+    91 => '91',
+    92 => '92',
+    93 => '93',
+    94 => '94',
+    95 => '95',
+    96 => '96',
+    97 => '97',
+    98 => '98',
+    99 => '99',
+    100 => '100',
   );
   $handler->display->display_options['filters']['field_project_client_target_id']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_project_client_target_id']['expose']['operator_id'] = 'field_project_client_target_id_op';
@@ -786,6 +806,16 @@ function dreamengg_views_views_default_views() {
 
   /* Display: Services */
   $handler = $view->new_display('block', 'Services', 'block_1');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '«';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹';
+  $handler->display->display_options['pager']['options']['tags']['next'] = '›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = '»';
   $export['projects'] = $view;
 
   $view = new view();
@@ -848,19 +878,6 @@ function dreamengg_views_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'services' => 'services',
   );
-
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Taxonomy term: Content with term */
-  $handler->display->display_options['relationships']['nid']['id'] = 'nid';
-  $handler->display->display_options['relationships']['nid']['table'] = 'taxonomy_index';
-  $handler->display->display_options['relationships']['nid']['field'] = 'nid';
-  $handler->display->display_options['relationships']['nid']['required'] = TRUE;
-  $handler->display->display_options['path'] = 'services';
   $export['services'] = $view;
 
   return $export;

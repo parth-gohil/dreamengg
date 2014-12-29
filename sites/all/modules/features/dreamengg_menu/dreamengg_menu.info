@@ -1,5 +1,5 @@
 name = DreamEngg Menu
-description = Feature to export the menus used in DreamEngg
+description = Feature for DreamEngg Menu
 core = 7.x
 package = DreamEngg
 version = 7.x-1.0
@@ -17,8 +17,8 @@ features[menu_links][] = main-menu_gallery:gallery
 features[menu_links][] = main-menu_history-to-present:company/history
 features[menu_links][] = main-menu_home:<front>
 features[menu_links][] = main-menu_manpower:manpower
-features[menu_links][] = main-menu_our-team:<nolink>
+features[menu_links][] = main-menu_our-team:<front>
 features[menu_links][] = main-menu_project-completed:project/completed
 features[menu_links][] = main-menu_project-inhand:project/inhand
 features[menu_links][] = main-menu_project:<nolink>
-mtime = 1419347550
+features[menu_links][] = main-menu_services:<nolink>

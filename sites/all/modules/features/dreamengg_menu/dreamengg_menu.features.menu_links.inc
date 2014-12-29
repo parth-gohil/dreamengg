@@ -47,7 +47,7 @@ function dreamengg_menu_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -48,
     'customized' => 1,
     'parent_identifier' => 'main-menu_about-us:<nolink>',
   );
@@ -68,7 +68,7 @@ function dreamengg_menu_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -50,
     'customized' => 1,
     'parent_identifier' => 'main-menu_about-us:<nolink>',
   );
@@ -89,7 +89,7 @@ function dreamengg_menu_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -46,
+    'weight' => 0,
     'customized' => 1,
   );
   // Exported menu link: main-menu_equipments:equipments
@@ -130,7 +130,7 @@ function dreamengg_menu_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -47,
     'customized' => 1,
     'parent_identifier' => 'main-menu_about-us:<nolink>',
   );
@@ -151,7 +151,7 @@ function dreamengg_menu_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -49,
     'customized' => 1,
     'parent_identifier' => 'main-menu_about-us:<nolink>',
   );
@@ -193,24 +193,24 @@ function dreamengg_menu_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'main-menu_services:<nolink>',
   );
-  // Exported menu link: main-menu_our-team:<nolink>
-  $menu_links['main-menu_our-team:<nolink>'] = array(
+  // Exported menu link: main-menu_our-team:<front>
+  $menu_links['main-menu_our-team:<front>'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<nolink>',
-    'router_path' => '<nolink>',
+    'link_path' => '<front>',
+    'router_path' => '',
     'link_title' => 'Our Team',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'main-menu_our-team:<nolink>',
+      'identifier' => 'main-menu_our-team:<front>',
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 0,
+    'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -46,
     'customized' => 1,
     'parent_identifier' => 'main-menu_about-us:<nolink>',
   );
@@ -231,7 +231,7 @@ function dreamengg_menu_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -50,
     'customized' => 1,
     'parent_identifier' => 'main-menu_project:<nolink>',
   );
@@ -252,7 +252,7 @@ function dreamengg_menu_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -49,
     'customized' => 1,
     'parent_identifier' => 'main-menu_project:<nolink>',
   );
@@ -273,7 +273,27 @@ function dreamengg_menu_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 1,
     'expanded' => 1,
-    'weight' => -47,
+    'weight' => -42,
+    'customized' => 1,
+  );
+  // Exported menu link: main-menu_services:<nolink>
+  $menu_links['main-menu_services:<nolink>'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => '<nolink>',
+    'router_path' => '<nolink>',
+    'link_title' => 'Services',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_services:<nolink>',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 1,
+    'expanded' => 1,
+    'weight' => -43,
     'customized' => 1,
   );
   // Translatables
@@ -291,6 +311,7 @@ function dreamengg_menu_menu_default_menu_links() {
   t('Project');
   t('Project Completed');
   t('Project InHand');
+  t('Services');
 
 
   return $menu_links;
