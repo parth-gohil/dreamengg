@@ -191,7 +191,7 @@
                 <?php print render($title_prefix); ?>
               <?php if ($title && !drupal_is_front_page()): ?><h1 class="page-title"><?php print $title; ?></h1><?php endif; ?>
               <?php print render($title_suffix); ?>
-              <div class="border-bottom-null"></div>
+              <?php if (!drupal_is_front_page()): ?><div class="border-bottom-null"></div><?php endif; ?>
               <?php if (!empty($tabs['#primary'])): ?><div class="tabs-wrapper clearfix"><?php print render($tabs); ?></div><?php endif; ?>
               <?php print render($page['help']); ?>
               <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
@@ -250,7 +250,7 @@
     <div class="container">
       <div class="row">
         <div class="fcred col-sm-12">
-          <?php print t('Copyright'); ?> &copy; <?php echo date("Y"); ?>, <a href="<?php print $front_page; ?>"><?php print $site_name; ?></a>. <?php print t('All Rights Reserved. '); ?><?php print t("Built on ")?><a href="http://drupal.com/projects/nexus"><?php print t('Nexus. ')?></a><?php print t("Proudly powered by !drupal", array('!drupal' => l('Drupal',"http://drupal.org")))?>
+          <?php print t('Copyright'); ?> &copy; <?php echo date("Y"); ?>, <a href="<?php print $front_page; ?>"><?php print $site_name; ?></a>. <?php print t('All Rights Reserved. '); ?><?php print t("Built on ") ?><a href="http://drupal.com/projects/nexus"><?php print t('Nexus. ') ?></a><?php print t("Proudly powered by !drupal", array('!drupal' => l('Drupal', "http://drupal.org"))) ?>
         </div>
       </div>
     </div>
